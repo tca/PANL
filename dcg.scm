@@ -30,11 +30,11 @@
       (parse rest p1 p defs)))))
 
 (define my-lang
-  `((--> noun '(cat))
-    (--> noun '(bat))
-    (--> verb '(eats))
-    (--> det '(the))
-    (--> det '(a))
+  `((--> noun (cat))
+    (--> noun (bat))
+    (--> verb (eats))
+    (--> det (the))
+    (--> det (a))
 
     (--> s det noun verb det noun)))
 
