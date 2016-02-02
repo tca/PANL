@@ -52,6 +52,21 @@
     (--> (s) (det) (noun) (verb) (det) (noun))
     (--> (s!) (s) '(!))))
 
-(parse '(s!) x '() my-lang)
+;; (parse '(s!) x '() my-lang)
 
+(define prog3-10
+  '((--> (s) (np) (vp))
+    (--> (np) (det) (n) (optrel))
+    (--> (np) (pn))
+    (--> (vp) (tv) (np))
+    (--> (vp) (iv))
+    (--> (optrel) '())
+    (--> (optrel) '(that) (vp))
+    (--> (pn) '(terry))
+    (--> (pn) '(shrdlu))
+    (--> (iv) '(halts))
+    (--> (det) '(a))
+    (--> (n) '(program))
+    (--> (tv) '(writes))))
 
+;; (parse '(s) x '() prog3-10)
