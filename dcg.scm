@@ -13,9 +13,9 @@
     (== e `(,body1 . ,body2))
     (conde
      ((== body2 '())
-      (parse body1 p0 p defs))
+      (parse-inner body1 p0 p defs))
      ((=/= body2 '())
-      (parse body1 p0 p1 defs)
+      (parse-inner body1 p0 p1 defs)
       (parse-body body2 p1 p defs)))))
 
 (define (parse-list e p0 p defs)
@@ -26,7 +26,7 @@
       (connects word p0 p1)
       (parse-list rest p1 p defs)))))
 
-(define (parse e p0 p defs)
+(define (parse-inner e p0 p defs)
   (conde
    ((fresh (body)
       (membero `(--> ,e . ,body) defs)
@@ -35,6 +35,13 @@
       (== e `(quote ,e1))
       (parse-list e1 p0 p defs)))))
 
+(define (parse e p0 p defs)
+  (conde
+   ((fresh (es)
+      (== e `(begin . ,es))
+      (parse-body es p0 p defs)))
+   ((parse-inner e p0 p defs))))
+
 (define my-lang
   `((--> (noun) '(cat))
     (--> (noun) '(bat))
@@ -42,8 +49,9 @@
     (--> (det) '(the))
     (--> (det) '(a))
 
-    (--> (s) (det) (noun) (verb) (det) (noun))))
+    (--> (s) (det) (noun) (verb) (det) (noun))
+    (--> (s!) (s) '(!))))
 
-;(parse '(s) x '() my-lang)
+(parse '(s!) x '() my-lang)
 
 
