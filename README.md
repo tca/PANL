@@ -8,6 +8,8 @@ Progress:
 
 | Book       | Repo        | Status |
 | -----|-------- |--------------:|
-| DCG interpreter, 6.4, pg 133 | `dcg.scm` | done |
 | DCG example, 3.10, pg 56 | `dcg.scm` | done |
+| DCG in prolog notation, 3.9, pg 54 | `dcg-manual.scm` | done |
 | DCG parse tree, pg 58 | | |
+| Minikanren in Minikanren, 6.1. pg 126 | `mk-meta.scm` | done |
+| DCG interpreter, 6.4, pg 133 | `dcg.scm` | done |
