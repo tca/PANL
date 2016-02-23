@@ -17,5 +17,6 @@ Progress:
 | Quantified Noun Phrases, program 4.2 pg 79 | `lf3.scm` | done |
 | Quantifier Scope, program 4.3 pg 83 | `lf4.scm` | done |
 | Auxiliary Verbs, Yes-No Questions, pg 89 | `lf5.scm` | done |
+| Filler-Gap Dependencies, Relative Clauses, program 4.4 pg 92 |  `lf6.scm` | done |
 | miniKanren in miniKanren, 6.1. pg 126 | `mk-meta.scm` | done |
 | DCG interpreter, 6.4, pg 133 | `dcg.scm` | done |
