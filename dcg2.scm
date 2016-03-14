@@ -1,8 +1,4 @@
-(import (scheme base)
-        (scheme write)
-        
-        (miruKanren mk-diseq))
-
+(use-modules (minikanren language))
 
 (define appendo
   (lambda (l s out)
